@@ -2,31 +2,38 @@
 
 CrystalGen is a diffusion-based generative model designed to create stable, novel inorganic materials. It draws inspiration from the MatterGen paper but extends the baseline with a focus on broader property constraints, improved fine-tuning mechanisms, and enhanced adaptability to real-world use cases.
 
+## 🚀 Motivation
+
 Traditional material discovery relies on slow, trial-and-error experiments and human intuition. Modern AI tools like high-throughput screening and ML-based predictors have improved efficiency but remain limited:
 
-* Only explore a small fraction (\~10⁶–10⁷) of the possible material space (\~10¹⁰)
-* Fail to generate stable crystals or optimize complex properties like symmetry or magnetism
+- Only explore a small fraction (~10⁶–10⁷) of the possible material space (~10¹⁰)
+- Fail to generate stable crystals or optimize complex properties like symmetry or magnetism
+
+## 🎯 Our Solution
 
 CrystalGen aims to overcome these limitations through:
 
-* **Inverse design** to directly generate material structures
-* **Support for diverse chemical elements and target properties**
-* **Improved stability**, with generated materials up to **15× closer to local energy minima**
+- **Inverse design** to directly generate material structures
+- **Support for diverse chemical elements and target properties**
+- **Improved stability**, with generated materials up to **15× closer to local energy minima**
 
 ---
 
-## Project Overview
+## 📋 Project Overview
 
-* **Objective**: Generate stable inorganic crystal structures based on user-defined properties (e.g., symmetry, magnetism, band gap)
-* **Approach**: Uses a diffusion-based generative process to refine atom types, positions, and the crystal lattice
-* **Fine-Tuning**: Adapter modules condition generation on specific property labels to steer toward desired outcomes
+| **Aspect** | **Details** |
+|------------|-------------|
+| **Objective** | Generate stable inorganic crystal structures based on user-defined properties (e.g., symmetry, magnetism, band gap) |
+| **Approach** | Uses a diffusion-based generative process to refine atom types, positions, and the crystal lattice |
+| **Fine-Tuning** | Adapter modules condition generation on specific property labels to steer toward desired outcomes |
 
 ---
 
-## Architecture & Workflow
+## 🏗️ Architecture & Workflow
 
-> ![architecture_diagram](https://github.com/user-attachments/assets/21be3bd0-4594-4d2f-9fc4-4be254c7ef11)
+![Architecture Diagram](https://github.com/user-attachments/assets/21be3bd0-4594-4d2f-9fc4-4be254c7ef11)
 
+### Process Flow:
 1. **Input**: Randomized crystal structure
 2. **Diffusion Process**: Corrupts and denoises atom types (A), coordinates (X), and lattice (L)
 3. **Score Network**: Equivariant neural network trained to reverse the corruption process
@@ -35,39 +42,67 @@ CrystalGen aims to overcome these limitations through:
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-* **Python**, **PyTorch**
-* **PyTorch Geometric** – Graph representation of crystal structures
-* **Diffusion Models** – Generative process for structure creation
-* **Equivariant GNNs** – Learn symmetry-aware representations
-* **Streamlit / FastAPI** – Optional APIs and user interfaces
-
----
-
-## End Users
-
-* **Materials Scientists**: To accelerate discovery of new compounds with desired physical or chemical properties.
-* **Chemical Engineers**: For designing materials tailored to industrial needs (e.g., catalysts, battery components).
-* **Academic Researchers**: As a tool for exploring hypothetical materials and validating computational hypotheses.
-* **AI Researchers**: Interested in applying generative models to physical sciences.
-* **Startups & R&D Labs**: Developing advanced materials for clean energy, semiconductors, or carbon capture technologies.
+| Component | Technology |
+|-----------|------------|
+| **Core Framework** | Python, PyTorch |
+| **Graph Processing** | PyTorch Geometric |
+| **Generation Method** | Diffusion Models |
+| **Neural Networks** | Equivariant GNNs |
+| **Interface** | Streamlit / FastAPI |
 
 ---
 
-## Key Features
+## 👥 Target Users
 
-* Generate stable, novel inorganic materials from scratch
-* Fine-tune generation toward specific properties (e.g., band gap, magnetic density)
-* Efficient exploration of the material space (\~10¹⁰ vs \~10⁶ in current methods)
-* Outperforms existing state-of-the-art models in stability and diversity
+| User Type | Use Case |
+|-----------|----------|
+| **Materials Scientists** | Accelerate discovery of new compounds with desired properties |
+| **Chemical Engineers** | Design materials for industrial needs (catalysts, battery components) |
+| **Academic Researchers** | Explore hypothetical materials and validate computational hypotheses |
+| **AI Researchers** | Apply generative models to physical sciences |
+| **Startups & R&D Labs** | Develop advanced materials for clean energy, semiconductors, carbon capture |
 
 ---
 
-## Contributors
+## ✨ Key Features
 
-* [@harinimanga31](https://github.com/harinimanga31)
-* [@abhigna-sree](https://github.com/abhigna-sree)
-* [@HarshithaNampally](https://github.com/HarshithaNampally)
-* [@Siri-chandanareddy21](https://github.com/Siri-chandanareddy21)
-* [@Sadhvini26](https://github.com/Sadhvini26)
+### 🔬 **Crystal Structure Generation**
+Generate crystal lattices from parameters, templates, or latent representations.
+
+### ⚛️ **Diffusion-Based Crystal Generator**
+Uses a diffusion model that corrupts and denoises atomic structures to generate stable ones.
+
+### 📐 **Symmetry and Lattice Validation**
+Verify generated structures for stability, physical correctness, and crystallographic validity.
+
+### 🧠 **AI-Powered Property Prediction**
+Use pre-trained models to predict properties such as bandgap, density, energy, and stability.
+
+### 🖼️ **3D Visualization**
+Interactive rendering of unit cells, atoms, and bonds in 2D/3D using Plotly and ASE.
+
+### 🌐 **Broader Chemical Element Support**
+Unlike some models limited to narrow elements, CrystalGen works across diverse elements.
+
+### 🔄 **Modular Agentic Design**
+Each subtask (generation, validation, prediction, etc.) is managed by independent agents, making workflows flexible and extensible.
+
+
+
+---
+
+## 🤝 Contributors
+
+| Contributor | GitHub |
+|-------------|--------|
+| Harini Manga | [@harinimanga31](https://github.com/harinimanga31) |
+| Abhigna Sree | [@abhigna-sree](https://github.com/abhigna-sree) |
+| Harshitha Nampally | [@HarshithaNampally](https://github.com/HarshithaNampally) |
+| Siri Chandana Reddy | [@Siri-chandanareddy21](https://github.com/Siri-chandanareddy21) |
+| Sadhvini | [@Sadhvini26](https://github.com/Sadhvini26) |
+
+---
+
+
